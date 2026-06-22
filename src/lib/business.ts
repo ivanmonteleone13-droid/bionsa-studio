@@ -20,7 +20,7 @@ export const business = {
   owner: "Bionsa Studio",
   rating: 5.0,
   reviewCount: 61,
-  foundedYear: null as number | null,
+  foundedYear: 2010,
   coordinates: { lat: 59.8588, lng: 17.6386 },
   hours: {
     note: "Ring gärna innan besök.",
@@ -34,6 +34,12 @@ export const business = {
       { day: "Söndag", hours: "Stängt" },
     ],
   },
+  trustBadges: [
+    { label: "5.0 på Bokadirekt", icon: "star" },
+    { label: "61+ omdömen", icon: "reviews" },
+    { label: "Uppsala centrum", icon: "location" },
+    { label: "🌸 Korean Beauty", icon: "student" },
+  ],
   usps: [
     {
       title: "Certifierad behandling",
@@ -56,6 +62,7 @@ export const business = {
     {
       id: "lashlift",
       name: "Lashlift",
+      icon: "✂️",
       description: "Professionell lashlift med fokus på kvalitet och kundnöjdhet.",
       duration: "30–90 min",
       priceFrom: null,
@@ -64,6 +71,7 @@ export const business = {
     {
       id: "browlift",
       name: "Browlift",
+      icon: "💇",
       description: "Professionell browlift med fokus på kvalitet och kundnöjdhet.",
       duration: "30–90 min",
       priceFrom: null,
@@ -72,6 +80,7 @@ export const business = {
     {
       id: "koreansk-lashlift",
       name: "Koreansk lashlift",
+      icon: "⭐",
       description: "Professionell koreansk lashlift med fokus på kvalitet och kundnöjdhet.",
       duration: "30–90 min",
       priceFrom: null,
@@ -80,6 +89,7 @@ export const business = {
     {
       id: "brynfix",
       name: "Brynfix",
+      icon: "🎯",
       description: "Professionell brynfix med fokus på kvalitet och kundnöjdhet.",
       duration: "30–90 min",
       priceFrom: null,
@@ -88,11 +98,20 @@ export const business = {
     {
       id: "fransf-rg",
       name: "Fransfärg",
+      icon: "✨",
       description: "Professionell fransfärg med fokus på kvalitet och kundnöjdhet.",
       duration: "30–90 min",
       priceFrom: null,
       note: "Kontakta oss för aktuella priser.",
     },
+  ],
+  gallery: [
+    { id: 1, label: "Styling", before: "from-[#1a1a1a] to-[#2D2D2D]", after: "from-[#FFB7C5]/40 to-[#2D2D2D]" },
+    { id: 2, label: "Behandling", before: "from-[#2D2D2D] to-[#1a1a1a]", after: "from-[#FFB7C5]/30 to-[#1a1a1a]" },
+    { id: 3, label: "Resultat", before: "from-[#1a1a1a] to-[#2D2D2D]/80", after: "from-[#FFB7C5] to-[#2D2D2D]/50" },
+    { id: 4, label: "Salong", before: "from-[#2D2D2D]/90 to-[#1a1a1a]", after: "from-[#FFB7C5]/50 to-[#FFB7C5]" },
+    { id: 5, label: "Detalj", before: "from-[#1a1a1a] to-[#FFB7C5]/20", after: "from-[#2D2D2D] to-[#FFB7C5]/35" },
+    { id: 6, label: "Atmosfär", before: "from-[#2D2D2D] to-[#FFB7C5]/25", after: "from-[#FFB7C5]/60 to-[#1a1a1a]" },
   ],
   testimonials: [
     {
@@ -108,17 +127,55 @@ export const business = {
       rating: 5,
     },
   ],
+  about: {
+    headline: "Om Bionsa Studio",
+    paragraphs: [
+      "Boutique lash and brow studio offering Korean lashlift and tailored brow treatments.",
+    ],
+  },
+  faq: [
+    {
+      question: "Var ligger Bionsa Studio?",
+      answer: "Vi finns på Muningatan 19, 753 08 Uppsala.",
+    },
+    {
+      question: "Hur bokar jag tid hos Bionsa Studio?",
+      answer: "Boka via Bokadirekt eller ring 070-740 79 00.",
+    },
+    {
+      question: "Vad säger kunder om Bionsa Studio?",
+      answer: "Vi har 5.0 i snittbetyg baserat på 61+ recensioner.",
+    },
+    {
+      question: "Vilka öppettider har ni?",
+      answer: "Ring gärna innan besök.",
+    },
+    {
+      question: "Kan jag avboka min tid?",
+      answer: "Ja, via Bokadirekt kan du hantera din bokning.",
+    },
+    {
+      question: "Hur länge håller lashlift?",
+      answer: "Normalt 6–8 veckor beroende på din franscykel.",
+    },
+    {
+      question: "Vad är brow lift?",
+      answer: "En behandling som lyfter och formar ögonbrynen naturligt.",
+    },
+  ],
   seoKeywords: [
     "lashlift Uppsala",
     "browlift Uppsala",
     "fransar Luthagen",
     "brynbehandling Uppsala",
+    "Bionsa Studio",
+    "Uppsala korean_beauty",
   ],
   brandColors: {
-    primary: "#8b4a6b",
-    secondary: "#e8b4bc",
-    accent: "#fdf6f8",
-    dark: "#5c2d42",
+    primary: "#2D2D2D",
+    secondary: "#FFB7C5",
+    accent: "#FFF5F7",
+    dark: "#1a1a1a",
   },
 } as const;
 
@@ -135,4 +192,9 @@ export function getMapsEmbedUrl() {
 export function getMapsLink() {
   const query = encodeURIComponent(getFullAddress());
   return `https://www.google.com/maps/search/?api=1&query=${query}`;
+}
+
+export function formatPrice(amount: number | null) {
+  if (amount === null) return "Pris på förfrågan";
+  return `från ${amount} kr`;
 }

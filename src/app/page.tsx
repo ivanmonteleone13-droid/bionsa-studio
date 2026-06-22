@@ -1,17 +1,23 @@
 import Hero from "@/components/Hero";
-import Benefits from "@/components/Benefits";
-import ServicesPreview from "@/components/ServicesPreview";
-import Testimonials from "@/components/Testimonials";
-import CtaBanner from "@/components/CtaBanner";
+import KoreanMethod from "@/components/KoreanMethod";
+import ServicesSection from "@/components/ServicesSection";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
+import AboutSection from "@/components/AboutSection";
+import FAQ from "@/components/FAQ";
+import ContactSection from "@/components/ContactSection";
+import FinalCTA from "@/components/FinalCTA";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Benefits />
-      <ServicesPreview />
-      <Testimonials />
-      <CtaBanner />
+      <KoreanMethod />
+      <ServicesSection />
+      <ReviewsCarousel />
+      <AboutSection />
+      <FAQ />
+      <ContactSection />
+      <FinalCTA />
     </>
   );
 }
