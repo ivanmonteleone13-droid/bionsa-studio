@@ -17,6 +17,7 @@ export const business = {
   bookingUrl: "https://www.bokadirekt.se/places/bionsa-studio-135623",
   bookingLabel: "Boka på Bokadirekt",
   websiteUrl: null as string | null,
+  logoImage: null as string | null,
   heroImage: "/images/hero.jpg",
   aboutImage: "/images/gallery-2.jpg",
   facebookUrl: null as string | null,
@@ -69,7 +70,7 @@ export const business = {
       icon: "✨",
       description: "NYHET! Koreansk lashlift inkl. färg & keratin — skräddarsytt efter dina önskemål.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 995,
       note: "Kontakta oss för aktuella priser.",
     },
     {
@@ -78,7 +79,7 @@ export const business = {
       icon: "🌸",
       description: "Klassisk lashlift inkl. färg & keratin för hållbara och naturliga resultat.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 800,
       note: "Kontakta oss för aktuella priser.",
     },
     {
@@ -87,7 +88,7 @@ export const business = {
       icon: "💫",
       description: "Browlift inkl. färg & keratin — lyfter och formar ögonbrynen naturligt.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 1095,
       note: "Kontakta oss för aktuella priser.",
     },
     {
@@ -96,7 +97,7 @@ export const business = {
       icon: "🎯",
       description: "Brynplock och färg av bryn — detaljarbete för ett definierat uttryck.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 800,
       note: "Kontakta oss för aktuella priser.",
     },
     {
